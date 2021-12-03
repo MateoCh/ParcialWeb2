@@ -5,11 +5,12 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { IntlProvider } from 'react-intl';
+import Espacios from './components/espacios';
 
 ReactDOM.render(
   <React.StrictMode>
     <IntlProvider locale="en">
-      <App />
+      <Espacios />
     </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
