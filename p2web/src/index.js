@@ -5,16 +5,27 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { IntlProvider } from 'react-intl';
-import Espacios from './components/espacios';
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
 
 ReactDOM.render(
   <React.StrictMode>
-    <IntlProvider locale="en">
-      <Espacios />
+    <IntlProvider locale="en" messages={getMessages()}>
+      <App />
     </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+function getLang()
+{
+
+}
+
+function getMessages()
+{
+  return navigator.language.toLowerCase().includes("es")?localeEsMessages:localeEnMessages;
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from "react";
+import { FormattedMessage } from "react-intl";
 import Device from "./device";
 
 function Devices(props)
 {
 
     return(
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">ID</th>
-                <th scope="col">Device</th>
-                <th scope="col">Value</th>
+                <th scope="col"><FormattedMessage id="Device"/></th>
+                <th scope="col"><FormattedMessage id="Value"/></th>
                 </tr>
             </thead>
             <tbody>

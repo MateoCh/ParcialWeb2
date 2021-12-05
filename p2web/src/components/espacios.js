@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import EspacioDetail from "./espacioDetail";
 import EspacioResumen from "./espacioResumen";
+import { FormattedMessage } from "react-intl";
 
 function Espacios()
 {
@@ -27,11 +28,13 @@ function Espacios()
     },[])
 
     return(
-        <div className="row">
+        <div className="container">
             <div className="row">
-                <h2>My spaces</h2>
+                <h2><FormattedMessage id="MySpaces"/></h2>
                 {/* {navigator.onLine?(<h2>Estás en linea, disfruta la página :D </h2>):(<h2>Oops, te has desconectado, pero mientras disfruta de lo previamente cargado :D</h2>)} */}
-                {espacios.map(a=>(<EspacioResumen place={a} key={a.id} updateSelected={setSelectedEspacio}/>))}
+                <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    {espacios.map(a=>(<EspacioResumen place={a} key={a.id} updateSelected={setSelectedEspacio}/>))}
+                </div>
             </div>
             <div className="row">
                 {selectedEspacio?.id?(<EspacioDetail place={selectedEspacio} key={"se"+selectedEspacio.id} />):null}
