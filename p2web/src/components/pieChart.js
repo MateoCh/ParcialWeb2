@@ -70,7 +70,7 @@ function PieChart(props)
             .style("opacity", 0)
             d3.select(this)
             .style("stroke", "black")
-            .style("opacity", 0.8);
+            .style("opacity", 0.6);
         }
 
         svg
@@ -82,7 +82,7 @@ function PieChart(props)
             .attr('fill', function(d){ return(color(d.value)) })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
-            .style("opacity", 0.7)
+            .style("opacity", 0.6)
             .on("mouseover", mouseOver)
             .on("mousemove", mouseMove)
             .on("mouseleave", mouseLeave);
