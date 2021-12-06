@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import { FormattedDate } from "react-intl";
+import React from "react";
 
 function Room(props)
 {

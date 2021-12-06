@@ -1,6 +1,7 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import * as d3 from 'd3';
 import { FormattedMessage } from "react-intl";
+import "./piechart.css";
 
 function PieChart(props)
 {
@@ -8,15 +9,14 @@ function PieChart(props)
     // const data = [2,4,8,10,14,20];
 
 
-    const width = 500;
-    const height = 400;
+    const width = 410;
+    const height = 410;
     const radius= 200;
 
    
 
     useEffect(()=>{
         let data= props.data;
-        console.log(data);
         let svg = d3.select(canvRef.current)
         .append("svg")
           .attr("width", width)
@@ -58,8 +58,8 @@ function PieChart(props)
         {
             tooltip
             .html(d.srcElement.__data__.data.name+": " + d.srcElement.__data__.data.value+" KwH")
-            .style("left", (d3.pointer(this)[0]) + "px")
-            .style("top", (d3.pointer(this)[1]) + "px");
+            .style("left", (3*width/6) + "px")
+            .style("top", (height/4) + "px");
         }
 
         function mouseLeave(d)
@@ -67,7 +67,7 @@ function PieChart(props)
             tooltip
             .style("opacity", 0)
             d3.select(this)
-            .style("stroke", "none")
+            .style("stroke", "black")
             .style("opacity", 0.8);
         }
 
@@ -92,15 +92,10 @@ function PieChart(props)
     return(
         <div className="col">
             <h2><FormattedMessage id="Stats"/></h2>
-            <h5><FormattedMessage id="PowerUsage"/></h5>
-            <div ref={canvRef}></div>
-            {/* <svg width = "100vw" height="400" ref={canvRef}></svg> */}
-            {/* {PieChart2(props.data,{
-                name: d => d.name,
-                value: d => d.value,
-                width:400,
-                height: 500
-                })} */}
+            <div className="centerText">
+              <h5><FormattedMessage id="PowerUsage"/></h5>
+            </div>
+            <div  className="center" ref={canvRef} viewBox="0 0 410 410" preserveAspectRatio="xMidYMid meet"></div>
         </div>
     );
 }

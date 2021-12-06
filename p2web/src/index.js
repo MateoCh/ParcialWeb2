@@ -10,7 +10,7 @@ import localeEnMessages from "./locales/en";
 
 ReactDOM.render(
   <React.StrictMode>
-    <IntlProvider locale="en" messages={getMessages()}>
+    <IntlProvider locale={getLang()} messages={getMessages()}>
       <App />
     </IntlProvider>
   </React.StrictMode>,
@@ -19,8 +19,8 @@ ReactDOM.render(
 
 function getLang()
 {
-
-}
+  return navigator.language;
+} 
 
 function getMessages()
 {

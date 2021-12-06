@@ -1,5 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
-import { FormattedDate } from "react-intl";
+import React, {useEffect, useState} from "react";
 import Devices from "./devices";
 import Room from "./room";
 import PieChart from "./pieChart";
@@ -42,7 +41,6 @@ function EspacioDetail(props)
                     obj.name=a.name;
                     return obj;
                 });
-                console.log(pwrs);
                 setPwrUsage([...pwrs]);
             });
         }
