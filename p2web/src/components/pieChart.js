@@ -56,13 +56,14 @@ function PieChart(props)
         
         function mouseMove(d)
         {
-            let despy=d.clientY-500;
-            let despx=d.clientX-275;
+            let despy=d.clientY-40;
+            let despx=d.clientX+30;
             tooltip
             .html(d.srcElement.__data__.data.name+": " + d.srcElement.__data__.data.value+" KwH")
-            .style("left", despx + "px")
+            .style("left", despx+ "px")
             .style("top", despy+ "px");
         }
+
 
         function mouseLeave(d)
         {

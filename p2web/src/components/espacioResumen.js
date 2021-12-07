@@ -3,7 +3,7 @@ import React from "react";
 function EspacioResumen(props)
 {
     return(
-        <div className="col">
+        <div className="col" onClick={()=>props.updateSelected(props.place)}>
             <div className="card m-1 h-100">
                 <img className="card-img-top" src={require(props.place.type.includes("house")?'../imgs/house.png':'../imgs/loft.png').default} alt="Lugar" onClick={()=>props.updateSelected(props.place)}/>
                 <div className="card-body">

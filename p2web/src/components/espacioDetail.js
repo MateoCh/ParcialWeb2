@@ -59,7 +59,7 @@ function EspacioDetail(props)
                     {selectedRoom?.name?(<Devices key={"d"+selectedRoom.homeId} devs={selectedRoom.devices} />):null}
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className="">
                 {(pwrUsage?.length>0)?(<PieChart key={"pc"+selectedRoom.homeId} data={pwrUsage}/>):null}
             </div>
         </div>
